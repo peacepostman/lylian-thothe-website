@@ -1,7 +1,8 @@
 import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
-import Layout from '../components/layout/Layout';
 import Hero from '../components/hero';
+import WhoAmI from '../components/whoami';
+import HomeGallery from '../components/home-gallery';
 
 const links = [
   {
@@ -45,9 +46,11 @@ const links = [
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <Layout>
+    <>
       <Hero />
-    </Layout>
+      <HomeGallery />
+      <WhoAmI />
+    </>
   );
 };
 

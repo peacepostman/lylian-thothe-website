@@ -25,8 +25,10 @@ const container = css`
   }
 `;
 
-const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <div css={container}>{children}</div>;
-};
+const Container: React.FC<{ children: React.ReactNode; [key: string]: any }> = ({ children, ...props }) => (
+  <div css={container} {...props}>
+    {children}
+  </div>
+);
 
 export default Container;

@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import logo from '../../../images/logo.png';
 
@@ -8,12 +7,26 @@ import Container from '../../UI/Container';
 import Row from '../../UI/Row';
 import Col from '../../UI/Col';
 
-import { header, headerLogo } from './Header.style';
+import { header, headerLogo, headerNavMenu, headerNavOptions, headerSocial } from './Header.style';
 
 const Header: React.FC<{}> = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          socials {
+            name
+            link
+            icon
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <header css={header}>
-      <Container>
+      <Container css={{ position: 'relative' }}>
         <Row>
           <Col lg={2}>
             <div css={headerLogo}>
@@ -23,33 +36,23 @@ const Header: React.FC<{}> = () => {
             </div>
           </Col>
           <Col lg={10}>
-            <div className="header__nav__option">
-              <nav className="header__nav__menu mobile-menu">
+            <div css={headerNavOptions}>
+              <nav css={headerNavMenu}>
                 <ul>
                   <li>
-                    <a href="./portfolio.html">Musics</a>
+                    <Link to="/portfolio">Musics</Link>
                   </li>
                   <li>
-                    <a href="./contact.html">Contact</a>
+                    <Link to="/contact">Contact</Link>
                   </li>
                 </ul>
               </nav>
-              <div className="header__nav__social">
-                <a href="#">
-                  <i className="fa fa-facebook"></i>
-                </a>
-                <a href="#">
-                  <i className="fa fa-twitter"></i>
-                </a>
-                <a href="#">
-                  <i className="fa fa-dribbble"></i>
-                </a>
-                <a href="#">
-                  <i className="fa fa-instagram"></i>
-                </a>
-                <a href="#">
-                  <i className="fa fa-youtube-play"></i>
-                </a>
+              <div css={headerSocial}>
+                {data.site.siteMetadata.socials.map(({ link, name, icon }: { name: string; link: string; icon: string }) => (
+                  <a href={link} key={name} title={name}>
+                    <img src={`static/${icon}`} alt={name} />
+                  </a>
+                ))}
               </div>
             </div>
           </Col>

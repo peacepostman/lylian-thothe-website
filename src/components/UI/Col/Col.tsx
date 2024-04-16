@@ -9,26 +9,28 @@ interface BreakpointsProps {
 }
 
 const breakpoints: any = {
-  sm: '@media (min-width: 576px)',
-  md: '@media (min-width: 768px)',
-  lg: '@media (min-width: 992px)',
-  xl: '@media (min-width: 1200px)',
+  sm: { key: 0, media: '@media (min-width: 576px)' },
+  md: { key: 1, media: '@media (min-width: 768px)' },
+  lg: { key: 2, media: '@media (min-width: 992px)' },
+  xl: { key: 3, media: '@media (min-width: 1200px)' },
 };
 
 const col = (data: BreakpointsProps) => {
-  let responsive = '';
+  let responsive: {
+    key: number;
+    media: string;
+  }[] = [];
   if (data && Object.keys(data).length > 0) {
     for (const [key, value] of Object.entries(data)) {
-      responsive =
-        responsive +
-        `${breakpoints[key]} {
-          flex: 0 0 auto;
-          width: ${(value * 100) / 12}%;
-      }`;
+      if (breakpoints[key]) {
+        responsive.push({
+          key: breakpoints[key]['key'],
+          media: `${breakpoints[key]['media']} { flex: 0 0 auto; width: ${(value * 100) / 12}%;}`,
+        });
+      }
     }
+    responsive.sort((a: any, b: any) => a.key - b.key);
   }
-
-  console.log('col::breakpoints', { breakpoints, data });
 
   return css`
     position: relative;
@@ -38,7 +40,7 @@ const col = (data: BreakpointsProps) => {
     padding-right: 12px;
     padding-left: 12px;
     margin-top: 0;
-    ${responsive}
+    ${responsive.map((item: any) => item.media).join('')}
   `;
 };
 
@@ -46,9 +48,6 @@ interface ColProps extends BreakpointsProps {
   children: React.ReactNode;
 }
 
-const Col: React.FC<ColProps> = ({ children, ...props }) => {
-  console.log('props', props);
-  return <div css={col(props)}>{children}</div>;
-};
+const Col: React.FC<ColProps> = ({ children, ...props }) => <div css={col(props)}>{children}</div>;
 
 export default Col;

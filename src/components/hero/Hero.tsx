@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import me from '../../images/me.jpg';
 
 import { Link } from 'gatsby';
-import Button from '../UI/Button/Button';
+import { button } from '../UI/Button/Button';
 import Container from '../UI/Container';
 import Row from '../UI/Row';
 import Col from '../UI/Col';
@@ -34,7 +34,6 @@ const heroTextSpan = css`
   text-transform: uppercase;
   margin-bottom: 18px;
   position: relative;
-  top: 100px;
 `;
 
 const heroTextH2 = css`
@@ -45,12 +44,10 @@ const heroTextH2 = css`
   text-transform: uppercase;
   margin-bottom: 38px;
   position: relative;
-  top: 100px;
 `;
 
 const heroTextBtn = css`
   position: relative;
-  top: 100px;
 `;
 
 const Hero: React.FC<{}> = () => {
@@ -63,9 +60,9 @@ const Hero: React.FC<{}> = () => {
               <div>
                 <span css={heroTextSpan}>LYLIAN THOTHE - Music Visual Composer</span>
                 <h2 css={heroTextH2}>I compose the best music for your project</h2>
-                <Button as={Link} to="/portfolio" css={heroTextBtn}>
+                <Link to="/portfolio" css={button}>
                   Listen me now
-                </Button>
+                </Link>
               </div>
             </Col>
           </Row>

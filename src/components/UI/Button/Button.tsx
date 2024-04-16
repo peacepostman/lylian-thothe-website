@@ -46,6 +46,8 @@ const button = css`
   }
 `;
 
+export { button };
+
 const Button: React.FC<any> = ({ as, children, ...props }) => {
   const Component = props.as ? props.as : 'button';
 
