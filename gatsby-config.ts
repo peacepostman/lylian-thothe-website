@@ -60,6 +60,7 @@ const config: GatsbyConfig = {
         icon: 'src/images/icon.png',
       },
     },
+    `gatsby-transformer-remark`,
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -82,10 +83,10 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'contents',
-        path: './src/contents/',
+        name: 'portfolios',
+        path: './src/portfolios/',
       },
-      __key: 'contents',
+      __key: 'portfolios',
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
@@ -98,6 +99,46 @@ const config: GatsbyConfig = {
         },
         pluginConfig: {
           respectDNT: true,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-modal-routing-v5.0`,
+      options: {
+        // A selector to set react-modal's app root to, default is `#___gatsby`
+        // See http://reactcommunity.org/react-modal/accessibility/#app-element
+        appElement: '#___gatsby',
+
+        // Object of props that will be passed to the react-modal container
+        // See http://reactcommunity.org/react-modal/#usage
+        modalProps: {
+          style: {
+            overlay: {
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.75)',
+              backdropFilter: 'blur(2px)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 10,
+            },
+            content: {
+              background: '#000',
+              WebkitOverflowScrolling: 'touch',
+              borderRadius: '4px',
+              border: 'none',
+              outline: 'none',
+              aspectRatio: '16 / 9',
+              margin: 'auto',
+              maxWidth: '1080px',
+              overflow: 'initial',
+              width: '95%',
+            },
+          },
         },
       },
     },

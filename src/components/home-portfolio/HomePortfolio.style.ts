@@ -67,10 +67,6 @@ const workItem = (type?: 'lg' | 'wide') => css`
   align-items: center;
   justify-content: center;
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
   @media (max-width: 479px) {
     width: 100%;
     margin-right: 0;
@@ -78,6 +74,26 @@ const workItem = (type?: 'lg' | 'wide') => css`
 
   @media (max-width: 767px) {
     width: calc(50% - 10px);
+  }
+
+  > [data-gatsby-image-wrapper] {
+    position: absolute !important;
+    inset: 0;
+    z-index: 0;
+  }
+
+  picture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  picture img {
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+    width: 100%;
   }
 `;
 
@@ -88,6 +104,9 @@ const workPlay = css`
   color: #ffffff;
   height: 50px;
   width: 50px;
+  min-width: 50px;
+  position: absolute;
+  margin: auto;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
@@ -95,6 +114,7 @@ const workPlay = css`
   backdrop-filter: blur(1px);
   cursor: pointer;
   transition: backdrop-filter 0.2s ease-in;
+  z-index: 1;
 
   &:hover {
     backdrop-filter: blur(3px);

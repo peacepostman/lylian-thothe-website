@@ -1,0 +1,68 @@
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import MuxPlayer from '@mux/mux-player-react';
+import '@mux/mux-player/themes/microvideo';
+import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-v5.0';
+import { workModal, workModalClose } from '../../components/home-portfolio/HomePortfolio.style';
+
+const PortfolioModal = ({
+  data, // this prop will be injected by the GraphQL query below.
+}: {
+  data: any;
+}) => {
+  const { markdownRemark } = data; // data.markdownRemark holds your post data
+  const { frontmatter, html } = markdownRemark;
+
+  return (
+    <ModalRoutingContext.Consumer>
+      {({ modal, closeTo }) => (
+        <div>
+          {modal ? (
+            <Link to={closeTo} css={workModalClose}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-6.489 5.8a1 1 0 0 0 -1.218 1.567l1.292 1.293l-1.292 1.293l-.083 .094a1 1 0 0 0 1.497 1.32l1.293 -1.292l1.293 1.292l.094 .083a1 1 0 0 0 1.32 -1.497l-1.292 -1.293l1.292 -1.293l.083 -.094a1 1 0 0 0 -1.497 -1.32l-1.293 1.292l-1.293 -1.292l-.094 -.083z" />
+              </svg>
+            </Link>
+          ) : null}
+          <div css={workModal}>
+            <h2>{frontmatter.title}</h2>
+            {frontmatter.media_type === 'mux' ? (
+              <MuxPlayer theme="microvideo" playbackId={frontmatter.media_src} accentColor="#FF0000" autoPlay />
+            ) : (
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${frontmatter.media_src}?rel=0&modestbranding=1&showinfo=0&controls=1&autoplay=1`}
+                title={frontmatter.name}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            )}
+          </div>
+        </div>
+      )}
+    </ModalRoutingContext.Consumer>
+  );
+};
+
+export const pageQuery = graphql`
+  query ($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      html
+      frontmatter {
+        slug
+        title
+        tags
+        image {
+          childImageSharp {
+            gatsbyImageData(width: 720)
+          }
+        }
+        media_type
+        media_src
+      }
+    }
+  }
+`;
+
+export default PortfolioModal;

@@ -27,13 +27,14 @@
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-mdx": "^5.13.1",
+    "gatsby-plugin-modal-routing-v5.0": "github:85Ryan/gatsby-plugin-modal-routing-v5.0",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-modal": "^3.16.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
