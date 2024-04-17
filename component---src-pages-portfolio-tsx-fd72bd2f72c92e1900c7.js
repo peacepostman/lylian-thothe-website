@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunklylian_thothe_website=self.webpackChunklylian_thothe_website||[]).push([[341],{5746:function(e,t,l){l.r(t),l.d(t,{Head:function(){return o}});var n=l(7294),u=l(5450);t.default=()=>(0,u.jsx)(n.Fragment,null,"Portfolio ma jeule");const o=()=>(0,u.jsx)("title",null,"Portfolio ma jeule")}}]);
+//# sourceMappingURL=component---src-pages-portfolio-tsx-fd72bd2f72c92e1900c7.js.map
