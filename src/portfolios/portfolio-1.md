@@ -1,8 +1,8 @@
 ---
-slug: '/portfolio/my-first-project'
-title: 'LiL Thothe'
-tags: ['ambiance', 'zizi']
-image: './../images/portfolio/work-1.jpg'
+slug: '/portfolio/the-earth-symphony'
+title: 'The Earth Symphony'
+tags: ['orchestral', 'symphony', 'documentary', 'violins ensemble', 'brass', 'epic']
+image: './../images/portfolio/the-earth-symphony.jpg'
 media_type: 'mux'
-media_src: 'ec9ZaI22m1nc4CiO5D1P3gaIoNsgxIUQhB4jpEjkwtc'
+media_src: 'MBZVtEu2IHUZKW00QGhQ023IES3lcsHBC3ub3UDpVeC00g'
 ---

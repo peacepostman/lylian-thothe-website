@@ -1,8 +1,8 @@
 ---
-slug: '/portfolio/my-first-3-project'
-title: 'Thothe 2'
-tags: ['ambiance', 'zizi']
-image: './../images/portfolio/work-2.jpg'
+slug: '/portfolio/spirit-of-egypt'
+title: 'Spirit Of Egypt'
+tags: ['instrumental', 'oriental', 'egypt', 'videogame']
+image: './../images/portfolio/soe.jpg'
 media_type: 'youtube'
-media_src: 'g6mM46UJWnE'
+media_src: 'kFCtnPOcH-w'
 ---
