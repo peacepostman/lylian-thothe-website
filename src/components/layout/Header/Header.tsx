@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import logo from '../../../images/logo.png';
 
@@ -48,11 +49,13 @@ const Header: React.FC<{}> = () => {
                 </ul>
               </nav>
               <div css={headerSocial}>
-                {data.site.siteMetadata.socials.map(({ link, name, icon }: { name: string; link: string; icon: string }) => (
-                  <a href={link} key={name} title={name}>
-                    <img src={`static/${icon}`} alt={name} />
-                  </a>
-                ))}
+                {data.site.siteMetadata.socials.map(({ link, name, icon }: { name: string; link: string; icon: string }) => {
+                  return (
+                    <a href={link} key={name} title={name}>
+                      <img src={`static/${icon}`} alt={name} width={15} height={15} />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </Col>

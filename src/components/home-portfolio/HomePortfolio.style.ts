@@ -92,8 +92,8 @@ const workItem = (type?: 'lg' | 'wide') => css`
   picture img {
     object-fit: cover;
     object-position: center;
-    height: auto;
     width: 100%;
+    height: 100%;
   }
 `;
 

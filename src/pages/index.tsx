@@ -24,7 +24,7 @@ export default IndexPage;
 export const Head: HeadFC = () => <title>Home Page</title>;
 
 export const pageQuery = graphql`
-  query {
+  query PortfolioExtract {
     allMarkdownRemark(limit: 8) {
       edges {
         node {

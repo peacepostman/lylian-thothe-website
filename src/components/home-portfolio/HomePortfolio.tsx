@@ -34,7 +34,7 @@ const HomeGallery = ({ portfolio }: any) => {
                     modal: true,
                   }}
                   css={workPlay}
-                  to={item.node.frontmatter.slug}
+                  to={'/portfolio/' + item.node.frontmatter.slug}
                   aria-label={item.node.frontmatter.title}
                 >
                   <svg width="24" height="24" fill="currentColor">
