@@ -25,7 +25,7 @@ export const Head: HeadFC = () => <title>Home Page</title>;
 
 export const pageQuery = graphql`
   query PortfolioExtract {
-    allMarkdownRemark(limit: 8) {
+    allMarkdownRemark(limit: 7) {
       edges {
         node {
           id
