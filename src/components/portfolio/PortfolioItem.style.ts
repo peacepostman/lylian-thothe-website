@@ -1,34 +1,5 @@
 import { css } from '@emotion/react';
 
-const wrapper = css`
-  background: #000001;
-  padding-top: 100px;
-  padding-bottom: 100px;
-`;
-
-const filters = css`
-  text-align: center;
-  margin-bottom: 40px;
-
-  li {
-    list-style: none;
-    font-size: 16px;
-    color: #adadad;
-    margin-right: 5px;
-    display: inline-block;
-    cursor: pointer;
-    padding: 6px 22px;
-
-    &.active {
-      border: 1px solid #fffff1;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-`;
-
 const item = css`
   margin-bottom: 35px;
 `;
@@ -140,4 +111,4 @@ const tag = css`
   }
 `;
 
-export { wrapper, filters, item, media, play, textWrapper, title, tag };
+export { item, media, play, textWrapper, title, tag };

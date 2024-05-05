@@ -1,12 +1,39 @@
 import * as React from 'react';
-import { Link, Script, graphql, type HeadFC, type PageProps } from 'gatsby';
+import { Script, graphql, type HeadFC, type PageProps } from 'gatsby';
+import { css } from '@emotion/react';
 import Container from '../../components/UI/Container';
 import Row from '../../components/UI/Row';
 import Col from '../../components/UI/Col';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import PortfolioItem from '../../components/portfolio/PortfolioItem';
 
-import { wrapper, filters, item as itemStyled, media, play, textWrapper, title, tag as tagStyle } from './index.style';
+const wrapper = css`
+  background: #000001;
+  padding-top: 100px;
+  padding-bottom: 100px;
+`;
 
+const filters = css`
+  text-align: center;
+  margin-bottom: 40px;
+
+  li {
+    list-style: none;
+    font-size: 16px;
+    color: #adadad;
+    margin-right: 5px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 6px 22px;
+
+    &.active {
+      border: 1px solid #fffff1;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`;
 const PortfolioPage: React.FC<PageProps> = ({
   data: {
     allMarkdownRemark: { edges },
@@ -64,43 +91,9 @@ const PortfolioPage: React.FC<PageProps> = ({
           </Col>
         </Row>
         <Row className="portfolio__gallery">
-          {edges.map((item: any, index: number) => {
-            var image = getImage(item.node.frontmatter.image);
-            return (
-              <Col lg={4} md={6} sm={6} className={'mix ' + item.node.frontmatter.tags.join(' ')} key={index}>
-                <div css={itemStyled}>
-                  <div css={media}>
-                    {image && <GatsbyImage image={image} alt={item.node.frontmatter.title} />}
-                    <Link
-                      state={{
-                        modal: true,
-                      }}
-                      css={play}
-                      to={'/portfolio/' + item.node.frontmatter.slug}
-                      aria-label={item.node.frontmatter.title}
-                    >
-                      <svg width="24" height="24" fill="currentColor">
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path d="M6 4v16a1 1 0 0 0 1.524.852l13-8a1 1 0 0 0 0-1.704l-13-8A1 1 0 0 0 6 4z" />
-                      </svg>
-                    </Link>
-                  </div>
-                  <div className="portfolio__item__text" css={textWrapper}>
-                    <h4 css={title}>{item.node.frontmatter.title}</h4>
-                    {item.node.frontmatter.tags && item.node.frontmatter.tags.length > 0 && (
-                      <ul>
-                        {item.node.frontmatter.tags.map((tag: string) => (
-                          <li key={tag} css={tagStyle}>
-                            {tag}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              </Col>
-            );
-          })}
+          {edges.map((item: any, index: number) => (
+            <PortfolioItem item={item} key={index} />
+          ))}
         </Row>
       </Container>
     </section>
