@@ -46,8 +46,13 @@ const col = (data: BreakpointsProps) => {
 
 interface ColProps extends BreakpointsProps {
   children: React.ReactNode;
+  className?: string;
 }
 
-const Col: React.FC<ColProps> = ({ children, ...props }) => <div css={col(props)}>{children}</div>;
+const Col: React.FC<ColProps> = ({ children, className, ...props }) => (
+  <div className={className} css={col(props)}>
+    {children}
+  </div>
+);
 
 export default Col;

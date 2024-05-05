@@ -9,6 +9,10 @@ const row = css`
   margin-left: -12px;
 `;
 
-const Row: React.FC<{ children: React.ReactNode }> = ({ children }) => <div css={row}>{children}</div>;
+const Row: React.FC<{ children: React.ReactNode; [props: string]: any }> = ({ children, ...otherProps }) => (
+  <div css={row} {...otherProps}>
+    {children}
+  </div>
+);
 
 export default Row;

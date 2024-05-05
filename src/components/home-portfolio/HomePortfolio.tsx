@@ -23,7 +23,6 @@ const HomeGallery = ({ portfolio }: any) => {
         <div data-masonry='{ "itemSelector": "[data-item]", "columnWidth": "[data-grid-sizer]", "gutter": 10 }'>
           <div data-grid-sizer css={gridSizer}></div>
           {portfolio.map((item: any, index: number) => {
-            console.log('item', { item });
             var image = getImage(item.node.frontmatter.image);
             return (
               <div data-item key={index} css={workItem(setFormat(index))}>
