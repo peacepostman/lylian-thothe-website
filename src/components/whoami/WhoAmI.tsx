@@ -1,7 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/react';
 import me from './../../images/me.jpg';
-import WhoAmIContent from './../../contents/who-am-i.mdx';
 import Container from '../UI/Container';
 import Row from '../UI/Row';
 import Col from '../UI/Col';

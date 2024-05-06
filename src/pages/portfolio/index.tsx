@@ -56,7 +56,6 @@ const PortfolioPage: React.FC<PageProps> = ({
           var gallery = document.querySelector('.portfolio__gallery');
           if (gallery && window && window.mixitup) {
             var mixer = window.mixitup(gallery);
-            console.log('mixer', mixer);
           }
         }}
       />
@@ -102,7 +101,7 @@ const PortfolioPage: React.FC<PageProps> = ({
 
 export default PortfolioPage;
 
-export const Head: HeadFC = () => <title>Portfolio ma jeule</title>;
+export const Head: HeadFC = () => <title>Lylian Thothe - Portfolio</title>;
 
 export const pageQuery = graphql`
   query Portfolios {
