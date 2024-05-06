@@ -52,7 +52,7 @@ const Header: React.FC<{}> = () => {
                 {data.site.siteMetadata.socials.map(({ link, name, icon }: { name: string; link: string; icon: string }) => {
                   return (
                     <a href={link} key={name} title={name}>
-                      <img src={`static/${icon}`} alt={name} width={15} height={15} />
+                      <img src={`/static/${icon}`} alt={name} width={15} height={15} />
                     </a>
                   );
                 })}
