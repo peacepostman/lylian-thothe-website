@@ -41,7 +41,7 @@ const Header: React.FC<{}> = () => {
               <nav css={headerNavMenu}>
                 <ul>
                   <li>
-                    <Link to="/portfolio">Musics</Link>
+                    <Link to="/musics">Musics</Link>
                   </li>
                   <li>
                     <Link to="/contact">Contact</Link>
