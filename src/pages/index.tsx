@@ -13,7 +13,7 @@ const IndexPage = ({
   return (
     <>
       <Script id="masonry" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" />
-      <Hero />
+      <Hero link="/portfolio" title="LYLIAN THOTHE - Music Visual Composer" description="I compose the best music for your project" small />
       <HomePortfolio portfolio={edges} />
       <WhoAmI />
     </>

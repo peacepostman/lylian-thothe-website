@@ -12,6 +12,9 @@ const button = css`
   letter-spacing: 2px;
   position: relative;
   z-index: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 
   &:hover:before,
   &:hover:after {

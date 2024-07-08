@@ -1,107 +1,139 @@
 import * as React from 'react';
-import { Script, graphql, type HeadFC, type PageProps } from 'gatsby';
+import { Script, type HeadFC, type PageProps } from 'gatsby';
 import { css } from '@emotion/react';
 import Container from '../../components/UI/Container';
 import Row from '../../components/UI/Row';
 import Col from '../../components/UI/Col';
+import Button from '../../components/UI/Button';
+import Toast, { ToastArea } from '../../components/UI/Toast/Toast';
+import Hero from '../../components/hero';
 
-
-const wrapper = css`
+const contact = css`
   background: #000001;
   padding-top: 100px;
   padding-bottom: 100px;
 `;
 
-const filters = css`
-  text-align: center;
-  margin-bottom: 40px;
+const title = css`
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+`;
 
-  li {
-    list-style: none;
-    font-size: 16px;
+const input = css`
+  height: 50px;
+  width: 100%;
+  border: 1px solid rgba(225, 225, 225, 0.5);
+  background: transparent;
+  font-size: 16px;
+  color: #adadad;
+  padding-left: 20px;
+  font-weight: 300;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  transition: all, 0.3s;
+
+  &:focus {
+    border-color: #e1e1e1;
+  }
+
+  &::placeholder {
     color: #adadad;
-    margin-right: 5px;
-    display: inline-block;
-    cursor: pointer;
-    padding: 6px 22px;
-
-    &.active {
-      border: 1px solid #fffff1;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 `;
-const PortfolioPage: React.FC<PageProps> = ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}: any) => {
-  const tags = edges.reduce((acc: any, item: any) => {
-    item.node.frontmatter.tags.forEach((tag: string) => {
-      if (!acc.includes(tag)) {
-        acc.push(tag);
-      }
-    });
-    return acc;
-  }, []);
 
+const textarea = css`
+  height: 110px;
+  width: 100%;
+  border: 1px solid rgba(225, 225, 225, 0.5);
+  background: transparent;
+  font-size: 16px;
+  color: #adadad;
+  padding-top: 12px;
+  padding-left: 20px;
+  font-weight: 300;
+  margin-bottom: 14px;
+  resize: none;
+  transition: all, 0.3s;
+
+  &:focus {
+    border-color: #e1e1e1;
+  }
+
+  &::placeholder {
+    color: #adadad;
+  }
+`;
+
+const ContactPage: React.FC<PageProps> = () => {
   return (
-    <section css={wrapper} className="portfolio spad">
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"
-        onLoad={() => {
-          var gallery = document.querySelector('.portfolio__gallery');
-          if (gallery && window && window.mixitup) {
-            var mixer = window.mixitup(gallery);
+    <>
+      <Hero small title="LYLIAN THOTHE - Music Visual Composer" description="Contact me if you would like to start working together !" />
+      <section css={contact} className="contact">
+        <Script id="form_listener">
+          {`
+          const form = document.getElementById("form");
+          if (form) {
+            form.addEventListener("submit", formSubmit);
+            function formSubmit(e) {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                fetch("https://getform.io/f/bwnggoka", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "Accept": "application/json",
+                    },
+                })
+                .then((response) => {
+                  const toastSuccess = document.querySelector('.toast-success');
+                  const toastFail = document.querySelector('.toast-error');
+                  if (response.ok && response.status === 200) {
+                    form.reset();
+                    if (toastSuccess) {
+                      toastSuccess.setAttribute('data-displayed', 'true');
+                      setTimeout(() => {
+                        toastSuccess.setAttribute('data-displayed', 'false');
+                      }, 2000);
+                    }
+                  } else {
+                    toastFail.setAttribute('data-displayed', 'true');
+                    setTimeout(() => {
+                      toastFail.setAttribute('data-displayed', 'false');
+                    }, 2000);
+                  }
+                })
+                .catch(error => console.log(error))
+            }
           }
-        }}
-      />
-      <Script>
-        {`
-        var filterItems = document.querySelectorAll('.portfolio__filter li');
-        if (filterItems.length > 0) {
-          filterItems.forEach((filterItem) => {
-            filterItem.addEventListener('click', function () {
-              filterItems.forEach((item) => {
-                item.classList.remove('active');
-              });
-              this.classList.add('active');
-            });
-          });
-        }
         `}
-      </Script>
-    </section>
+        </Script>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <div className="contact__form">
+                <h3 css={title}>Contact Me</h3>
+                <form method="POST" acceptCharset="UTF-8" id="form">
+                  <input css={input} type="text" name="name" placeholder="Name" />
+                  <input css={input} type="email" name="email" placeholder="Email" />
+                  <input type="hidden" name="_gotcha" style={{ display: 'none' }}></input>
+                  <textarea css={textarea} name="message" placeholder="Message"></textarea>
+                  <Button type="submit">Send</Button>
+                </form>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <ToastArea>
+          <Toast type="success" message="Your message has been sent !" visible={false} />
+          <Toast type="error" message="An error occured" visible={false} />
+        </ToastArea>
+      </section>
+    </>
   );
 };
 
-export default PortfolioPage;
+export default ContactPage;
 
-export const Head: HeadFC = () => <title>Lylian Thothe - Portfolio</title>;
-
-export const pageQuery = graphql`
-  query Portfolios {
-    allMarkdownRemark {
-      edges {
-        node {
-          id
-          frontmatter {
-            slug
-            title
-            tags
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 720)
-              }
-            }
-            media_type
-            media_src
-          }
-        }
-      }
-    }
-  }
-`;
+export const Head: HeadFC = () => <title>Lylian Thothe - Contact</title>;
