@@ -1,8 +1,8 @@
 ---
-    slug: 'tears-in-rain'
-    title: 'Tears In Rain'
-    tags: ['ambiance', 'electro', 'movie', 'drama']
-    image: './../images/portfolio/tir.jpg'
+    slug: 'Spiderman Opening Scene Rescored'
+    title: 'Spiderman Opening Scene Rescored'
+    tags: ['video game', 'orchestral', 'remix', 'hip hop']
+    image: './../images/portfolio/smm.jpg'
     media_type: 'youtube'
-    media_src: 'RoEdlkDACbk'
+    media_src: 'AeI2shcAuQY'
 ---

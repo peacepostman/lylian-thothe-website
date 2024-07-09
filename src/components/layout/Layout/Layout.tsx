@@ -27,7 +27,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             font-weight: 400;
             line-height: 1.5;
             color: #131313;
-            background-color: #fff;
+            background-color: black;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
           }

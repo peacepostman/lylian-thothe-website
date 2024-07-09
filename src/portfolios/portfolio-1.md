@@ -1,8 +1,8 @@
 ---
 slug: 'the-earth-symphony'
-title: 'The Earth Symphony'
+title: 'The Earth Symphony - Wildlife Clip Orignal Music'
 tags: ['orchestral', 'symphony', 'documentary', 'violins ensemble', 'brass', 'epic']
 image: './../images/portfolio/the-earth-symphony.jpg'
-media_type: 'mux'
-media_src: 'ec9ZaI22m1nc4CiO5D1P3gaIoNsgxIUQhB4jpEjkwtc'
+media_type: 'youtube'
+media_src: 'Fmqfpjubeo8'
 ---

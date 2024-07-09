@@ -1,8 +1,8 @@
 ---
-slug: 'ghost-of-passage'
-title: 'Ghost Of Passage'
-tags: ['ambiance', 'electro', 'film']
-image: './../images/portfolio/gop.jpg'
+slug: 'Sprite Fright'
+title: 'Sprite Fright - Short Movie Original Music'
+tags: ['orchestral', 'horror', 'film', 'rock']
+image: './../images/portfolio/sf.jpg'
 media_type: 'youtube'
 media_src: 'NPg33QCHyTc'
 ---

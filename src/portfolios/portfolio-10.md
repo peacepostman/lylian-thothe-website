@@ -1,8 +1,8 @@
 ---
-slug: 'first-bloom-spring-animation'
-title: 'First Bloom Spring animtion'
-tags: ['Short film', 'animation', 'orchestral', 'epic']
-image: './../images/portfolio/fbl.jpg'
+slug: 'Civil War Trailer'
+title: 'Civil War Trailer Original Epic Music'
+tags: ['trailer', 'epic', 'hybrid', 'action']
+image: './../images/portfolio/cv.jpg'
 media_type: 'youtube'
-media_src: 'fvQSn-hV9cw'
+media_src: 'Ru9nxcHe7eI'
 ---

@@ -1,8 +1,8 @@
 ---
-slug: 'room'
-title: 'Room'
-tags: ['ambiance', 'electro', 'short film']
-image: './../images/portfolio/room.jpg'
+slug: 'iceland clip'
+title: 'Original Score for Iceland Promotion Clip'
+tags: ['clip', 'orchestral', 'short film']
+image: './../images/portfolio/tyb.jpg'
 media_type: 'youtube'
-media_src: 'Wp8Rk0kIx0Q'
+media_src: 'QvO-ivSKGdI'
 ---
