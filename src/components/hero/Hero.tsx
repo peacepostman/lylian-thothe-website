@@ -18,10 +18,6 @@ const hero = css`
 `;
 
 const heroItem = (small?: boolean) => css`
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-image: url(${me});
   height: ${small ? '360px' : '684px'};
   padding-top: ${small ? '140px' : '255px'};
 `;
@@ -73,3 +69,8 @@ const Hero: React.FC<HeroType> = ({ title, description, link, small }: HeroType)
 };
 
 export default Hero;
+
+// background-repeat: no-repeat;
+// background-size: cover;
+// background-position: center;
+// background-image: url(${me});
