@@ -3,18 +3,12 @@ import { css } from '@emotion/react';
 const work = css`
   overflow: hidden;
   background: #000001;
+  width:90%;
+  margin:auto;
 `;
 
 const gridSizer = css`
-  width: calc(16.67% - 10px);
 
-  @media (max-width: 479px) {
-    width: 100%;
-  }
-
-  @media (max-width: 767px) {
-    width: calc(50% - 10px);
-  }
 `;
 
 const workItemHover = css`
@@ -55,9 +49,9 @@ const workItemHover = css`
 `;
 
 const workItem = (type?: 'lg' | 'wide') => css`
-  height: ${type && type === 'lg' ? '633px !important' : '311px !important'};
-  width: ${type ? 'calc(33.33% - 10px)' : 'calc(16.67% - 10px)'};
 
+  width:495px;
+  height:284px;
   margin-right: 10px;
   margin-bottom: 10px;
   float: left;
@@ -163,3 +157,8 @@ const workModalClose = css`
 `;
 
 export { work, workItem, workItemHover, workPlay, workModal, workModalClose, gridSizer };
+
+
+
+  // height: ${type && type === 'lg' ? '633px !important' : '311px !important'};
+  // width: ${type ? 'calc(33.33% - 10px)' : 'calc(16.67% - 10px)'};

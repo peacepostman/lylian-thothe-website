@@ -19,7 +19,7 @@ const HomeGallery = ({ portfolio }: any) => {
   return (
     <section css={work}>
       <div className="grid" data-masonry='{ "itemSelector": "[data-item]", "columnWidth": "[data-grid-sizer]", "gutter": 10 }'>
-        <div data-grid-sizer css={gridSizer}></div>
+        { <div data-grid-sizer css={gridSizer}></div>}
         {portfolio.map((item: any, index: number) => {
           var image = getImage(item.node.frontmatter.image);
           return (
