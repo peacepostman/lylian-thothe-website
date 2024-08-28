@@ -1,5 +1,5 @@
 ---
-slug: 'Sprite Fright'
+slug: 'sprite-fright'
 title: 'Sprite Fright - Short Movie Original Music'
 tags: ['orchestral', 'horror', 'film', 'rock']
 image: './../images/portfolio/sf.jpg'

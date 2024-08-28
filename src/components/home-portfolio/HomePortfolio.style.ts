@@ -3,12 +3,13 @@ import { css } from '@emotion/react';
 const work = css`
   overflow: hidden;
   background: #000001;
-  width:90%;
-  margin:auto;
-`;
+  width: 90%;
+  margin: auto;
 
-const gridSizer = css`
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 `;
 
 const workItemHover = css`
@@ -49,17 +50,12 @@ const workItemHover = css`
 `;
 
 const workItem = (type?: 'lg' | 'wide') => css`
-
-  width:495px;
-  height:284px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  float: left;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 16 / 9;
 
   @media (max-width: 479px) {
     width: 100%;
@@ -156,9 +152,7 @@ const workModalClose = css`
   }
 `;
 
-export { work, workItem, workItemHover, workPlay, workModal, workModalClose, gridSizer };
+export { work, workItem, workItemHover, workPlay, workModal, workModalClose };
 
-
-
-  // height: ${type && type === 'lg' ? '633px !important' : '311px !important'};
-  // width: ${type ? 'calc(33.33% - 10px)' : 'calc(16.67% - 10px)'};
+// height: ${type && type === 'lg' ? '633px !important' : '311px !important'};
+// width: ${type ? 'calc(33.33% - 10px)' : 'calc(16.67% - 10px)'};

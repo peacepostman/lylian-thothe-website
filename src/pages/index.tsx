@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { HeadFC } from 'gatsby';
-import { Script, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Hero from '../components/hero';
 import WhoAmI from '../components/whoami';
 import HomePortfolio from '../components/home-portfolio';
@@ -12,7 +12,6 @@ const IndexPage = ({
 }: any) => {
   return (
     <>
-      <Script id="masonry" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" />
       <Hero link="/musics" title="LYLIAN THOTHE - Music Visual Composer" description="I compose the best music for your project" small />
       <HomePortfolio portfolio={edges} />
       <WhoAmI />
@@ -26,7 +25,7 @@ export const Head: HeadFC = () => <title>Lylian Thothe - </title>;
 
 export const pageQuery = graphql`
   query PortfolioExtract {
-    allMarkdownRemark(limit: 7) {
+    allMarkdownRemark(limit: 9) {
       edges {
         node {
           id

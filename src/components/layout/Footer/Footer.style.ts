@@ -2,9 +2,10 @@ import { css } from '@emotion/react';
 
 const footer = css`
   background: #131313;
-  position:fixed;
-  bottom:0;
-  width:100%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
   @media (min-width: 992px) and (max-width: 1199px) {
   }
 `;

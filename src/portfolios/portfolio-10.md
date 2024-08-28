@@ -1,5 +1,5 @@
 ---
-slug: 'Civil War Trailer'
+slug: 'civil-war-trailer'
 title: 'Civil War Trailer Original Epic Music'
 tags: ['trailer', 'epic', 'hybrid', 'action']
 image: './../images/portfolio/cv.jpg'

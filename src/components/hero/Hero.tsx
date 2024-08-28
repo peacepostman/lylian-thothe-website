@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { css } from '@emotion/react';
 
-import me from '../../images/me.jpg';
-
 import { Link } from 'gatsby';
 import { button } from '../UI/Button/Button';
 import Container from '../UI/Container';

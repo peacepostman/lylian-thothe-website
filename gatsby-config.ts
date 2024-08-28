@@ -4,41 +4,36 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Lylian Thothe Website`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://lylianthothe.com`,
     socials: [
-      {
-        name: 'Facebook',
-        link: 'https://www.facebook.com/',
-        icon: '/brand-facebook-outlined.png',
-      },
+      // {
+      //   name: 'Facebook',
+      //   link: 'https://www.facebook.com/',
+      //   icon: '/brand-facebook-outlined.png',
+      // },
       {
         name: 'Youtube',
-        link: 'https://www.youtube.com/',
+        link: 'https://www.youtube.com/@ly_filmmusic',
         icon: '/brand-youtube-filled.png',
       },
-      {
-        name: 'X',
-        link: 'https://www.x.com/',
-        icon: '/brand-x-outlined.png',
-      },
+      // {
+      //   name: 'X',
+      //   link: 'https://www.x.com/',
+      //   icon: '/brand-x-outlined.png',
+      // },
       {
         name: 'TikTok',
-        link: 'https://www.tiktok.com/',
+        link: 'https://www.tiktok.com/@ly_filmmusic',
         icon: '/brand-tiktok-outlined.png',
       },
       {
         name: 'Instagram',
-        link: 'https://www.instagram.com/',
+        link: 'https://www.instagram.com/ly_filmmusic/',
         icon: '/brand-instagram-outlined.png',
       },
       {
-        name: 'Dribbble',
-        link: 'https://www.dribbble.com/',
-        icon: '/brand-dribbble-outlined.png',
-      },
-      {
         name: 'Soundcloud',
-        link: 'https://www.soundcloud.com/',
+        link: 'https://soundcloud.com/lylianthothe',
         icon: '/brand-soundcloud-filled.png',
       },
     ],

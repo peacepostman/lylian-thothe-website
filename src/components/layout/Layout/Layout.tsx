@@ -30,6 +30,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             background-color: black;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
+            padding-bottom: 100px;
           }
           a {
             text-decoration: none;

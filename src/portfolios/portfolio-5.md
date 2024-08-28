@@ -1,5 +1,5 @@
 ---
-    slug: 'Spiderman Opening Scene Rescored'
+    slug: 'spiderman-opening-scene-rescored'
     title: 'Spiderman Opening Scene Rescored'
     tags: ['video game', 'orchestral', 'remix', 'hip hop']
     image: './../images/portfolio/smm.jpg'

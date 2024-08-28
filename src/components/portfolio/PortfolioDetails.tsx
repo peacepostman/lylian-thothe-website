@@ -29,7 +29,13 @@ const PortfolioModal = ({
             <h2>{frontmatter.title}</h2>
             {frontmatter.media_type === 'mux' ? (
               <MuxPlayer theme="microvideo" playbackId={frontmatter.media_src} accentColor="#FF0000" autoPlay />
-            ) : (
+            ) : frontmatter.media_type === 'soundcloud' ? (
+              <iframe
+                allowFullScreen
+                allow="autoplay"
+                src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${frontmatter.media_src}&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true`}
+              ></iframe>
+            ) : frontmatter.media_type === 'youtube' ? (
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${frontmatter.media_src}?rel=0&modestbranding=1&showinfo=0&controls=1&autoplay=1`}
                 title={frontmatter.name}
@@ -37,6 +43,8 @@ const PortfolioModal = ({
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
+            ) : (
+              ''
             )}
           </div>
         </div>
