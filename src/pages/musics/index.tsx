@@ -105,7 +105,7 @@ export const Head: HeadFC = () => <title>Lylian Thothe - Portfolio</title>;
 
 export const pageQuery = graphql`
   query Portfolios {
-    allMarkdownRemark {
+    allMarkdownRemark(filter: {frontmatter: {media_type: {nin: "soundcloud"}}}, sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           id

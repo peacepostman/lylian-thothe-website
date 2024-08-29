@@ -26,7 +26,7 @@ const media = css`
   }
 
   picture img {
-    object-fit: contain;
+    object-fit: contain !important;
     object-position: center;
     width: 100%;
     height: 100%;

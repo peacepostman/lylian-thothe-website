@@ -43,7 +43,6 @@ const Footer: React.FC<{}> = () => {
                   </a>
                 ))}
               </div>
-              <p>LYLIAN THOTHE MOVIE GAME COMPOSER - COPYRIGHT © 2024 </p>
             </Col>
           </Row>
         </div>
