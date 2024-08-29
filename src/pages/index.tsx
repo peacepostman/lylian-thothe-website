@@ -25,13 +25,14 @@ export const Head: HeadFC = () => <title>Lylian Thothe - </title>;
 
 export const pageQuery = graphql`
   query PortfolioExtract {
-    allMarkdownRemark(limit: 9) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 9) {
       edges {
         node {
           id
           frontmatter {
             slug
             title
+            date
             tags
             image {
               childImageSharp {

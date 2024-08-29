@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { css } from '@emotion/react';
 
+import me from '../../images/me.jpg';
+
 import { Link } from 'gatsby';
 import { button } from '../UI/Button/Button';
 import Container from '../UI/Container';
@@ -18,6 +20,10 @@ const hero = css`
 const heroItem = (small?: boolean) => css`
   height: ${small ? '360px' : '684px'};
   padding-top: ${small ? '140px' : '255px'};
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${me});
 `;
 
 const heroTextSpan = css`
@@ -45,7 +51,7 @@ type HeroType = { title: string; description: string; link?: string; small?: boo
 const Hero: React.FC<HeroType> = ({ title, description, link, small }: HeroType) => {
   return (
     <section css={hero}>
-      <div css={heroItem(small)} data-setbg="img/hero/me.jpg">
+      <div css={heroItem(small)}>
         <Container>
           <Row>
             <Col lg={9}>
@@ -67,8 +73,3 @@ const Hero: React.FC<HeroType> = ({ title, description, link, small }: HeroType)
 };
 
 export default Hero;
-
-// background-repeat: no-repeat;
-// background-size: cover;
-// background-position: center;
-// background-image: url(${me});

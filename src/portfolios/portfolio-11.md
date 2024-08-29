@@ -1,5 +1,6 @@
 ---
 slug: 'tears-in-rain'
+date: '2024-08-29'
 title: 'Tears in rain'
 tags: ['trailer', 'epic', 'hybrid', 'action']
 image: './../images/portfolio/tears-rain.jpg'

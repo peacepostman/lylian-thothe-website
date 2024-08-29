@@ -112,6 +112,7 @@ export const pageQuery = graphql`
           frontmatter {
             slug
             title
+            date
             tags
             image {
               childImageSharp {

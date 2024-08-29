@@ -1,5 +1,6 @@
 ---
 slug: 'arrakis'
+date: '2024-08-24'
 title: 'Arrakis'
 tags: ['orchestral', 'symphony', 'ambiance', 'woodwinds', 'violins ensemble']
 image: './../images/portfolio/arrakis.jpg'
