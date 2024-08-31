@@ -1,9 +1,9 @@
 ---
-slug: 'arrakis'
+slug: 'les-choses-qui-vont-bien-introduction'
 date: '2024-08-24'
-title: 'Arrakis'
-tags: ['orchestral', 'symphony', 'ambiance', 'woodwinds', 'violins ensemble']
+title: 'Les Choses qui vont bien Introduction musique'
+tags: ['pop', 'guitar', 'short film']
 image: './../images/portfolio/arrakis.jpg'
 media_type: 'youtube'
-media_src: '1nUgQ2gfN3U'
+media_src: 'DqiHqZ59Qas'
 ---
