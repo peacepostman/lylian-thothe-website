@@ -23,7 +23,6 @@ const heroItem = (small?: boolean) => css`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(${me});
 `;
 
 const heroTextSpan = css`

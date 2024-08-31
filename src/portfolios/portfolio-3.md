@@ -1,9 +1,9 @@
 ---
-slug: 'furiosa-drama-scene-rescored'
-date: '2024-08-21'
-title: 'Furiosa Drama Scene Rescored'
-tags: ['orchestral', 'drama', 'film', 'violins ensemble']
-image: './../images/portfolio/soe.jpg'
+slug: 'furiosa-chasing-scene'
+date: '2024-08-30'
+title: 'Furiosa Chase Scene'
+tags: ['movie', 'epic', 'percussion', 'action']
+image: './../images/portfolio/furiosa.jpg'
 media_type: 'youtube'
 media_src: 'gg7g8NiBSxg'
 ---

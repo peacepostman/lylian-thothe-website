@@ -1,6 +1,6 @@
 ---
 slug: 'the-earth-symphony'
-date: '2024-08-19'
+date: '2024-08-29'
 title: 'The Earth Symphony - Wildlife Clip Orignal Music'
 tags: ['orchestral', 'symphony', 'documentary', 'violins ensemble', 'brass', 'epic']
 image: './../images/portfolio/the-earth-symphony.jpg'
