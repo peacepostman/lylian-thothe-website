@@ -10,6 +10,10 @@ const work = css`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const workItemHover = css`
@@ -57,15 +61,6 @@ const workItem = (type?: 'lg' | 'wide') => css`
   justify-content: center;
   aspect-ratio: 16 / 9;
 
-  @media (max-width: 479px) {
-    width: 100%;
-    margin-right: 0;
-  }
-
-  @media (max-width: 767px) {
-    width: calc(50% - 10px);
-  }
-
   > [data-gatsby-image-wrapper] {
     position: absolute !important;
     inset: 0;
@@ -105,6 +100,9 @@ const workPlay = css`
   cursor: pointer;
   transition: backdrop-filter 0.2s ease-in;
   z-index: 1;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
 
   &:hover {
     backdrop-filter: blur(3px);

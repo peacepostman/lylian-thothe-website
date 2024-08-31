@@ -82,7 +82,7 @@ const PortfolioPage: React.FC<PageProps> = ({
                 All
               </li>
               {tags.map((tag: any, index: number) => (
-                <li key={tag} data-filter={`.${tag.toLowerCase()}`}>
+                <li key={tag} data-filter={`.${tag.toLowerCase().replace(/ /g, '-')}`}>
                   {tag}
                 </li>
               ))}
@@ -105,7 +105,7 @@ export const Head: HeadFC = () => <title>Lylian Thothe - Portfolio</title>;
 
 export const pageQuery = graphql`
   query Portfolios {
-    allMarkdownRemark(filter: {frontmatter: {media_type: {nin: "soundcloud"}}}, sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(filter: { frontmatter: { media_type: { nin: "soundcloud" } } }, sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           id
