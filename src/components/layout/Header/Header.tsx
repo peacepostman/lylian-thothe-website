@@ -8,7 +8,7 @@ import Container from '../../UI/Container';
 import Row from '../../UI/Row';
 import Col from '../../UI/Col';
 
-import { header, headerLogo, headerNavMenu, headerNavOptions, headerSocial } from './Header.style';
+import { header, headerDropdown, headerLogo, headerNavMenu, headerNavOptions, headerSocial } from './Header.style';
 
 const Header: React.FC<{}> = () => {
   const data = useStaticQuery(graphql`
@@ -40,6 +40,23 @@ const Header: React.FC<{}> = () => {
             <div css={headerNavOptions}>
               <nav css={headerNavMenu}>
                 <ul>
+                  <li>
+                    <Link to="/projects">Projects</Link>
+                    <ul css={headerDropdown} className="dropdown">
+                      <li>
+                        <Link to="/projects/films">Films</Link>
+                      </li>
+                      <li>
+                        <Link to="/projects/video-games">Video Games</Link>
+                      </li>
+                      <li>
+                        <Link to="/projects/sound-fx">Sound FX</Link>
+                      </li>
+                      <li>
+                        <Link to="/projects/ads">Ads</Link>
+                      </li>
+                    </ul>
+                  </li>
                   <li>
                     <Link to="/musics">Musics</Link>
                   </li>

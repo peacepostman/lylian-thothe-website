@@ -1,9 +1,9 @@
 import * as React from 'react';
 import type { HeadFC } from 'gatsby';
 import { graphql } from 'gatsby';
-import Hero from '../components/hero';
-import WhoAmI from '../components/whoami';
-import HomePortfolio from '../components/home-portfolio';
+import Hero from '@components/hero';
+import WhoAmI from '@components/whoami';
+import HomePortfolio from '@components/home-portfolio';
 
 const IndexPage = ({
   data: {
@@ -25,7 +25,7 @@ export const Head: HeadFC = () => <title>Lylian Thothe - </title>;
 
 export const pageQuery = graphql`
   query PortfolioExtract {
-    allMarkdownRemark(filter: {frontmatter: {media_type: {eq: "youtube"}}}, sort: { frontmatter: { date: DESC } }, limit: 6) {
+    allMarkdownRemark(filter: { frontmatter: { media_type: { eq: "youtube" } } }, sort: { frontmatter: { date: DESC } }, limit: 6) {
       edges {
         node {
           id

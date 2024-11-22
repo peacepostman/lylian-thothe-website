@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Script, graphql, type HeadFC, type PageProps } from 'gatsby';
+import { Script } from 'gatsby';
 import { css } from '@emotion/react';
-import Container from '../../components/UI/Container';
-import Row from '../../components/UI/Row';
-import Col from '../../components/UI/Col';
-import PortfolioItem from '../../components/projects/ProjectItem';
+import Container from '@components/UI/Container';
+import Row from '@components/UI/Row';
+import Col from '@components/UI/Col';
+import ProjectItem from '@components/projects/ProjectItem';
 
 const wrapper = css`
   background: #000001;
@@ -34,11 +34,7 @@ const filters = css`
     }
   }
 `;
-const PortfolioPage: React.FC<PageProps> = ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}: any) => {
+const ProjectListing = ({ edges }: { edges: any }) => {
   const tags = edges.reduce((acc: any, item: any) => {
     item.node.frontmatter.tags.forEach((tag: string) => {
       if (!acc.includes(tag)) {
@@ -91,7 +87,7 @@ const PortfolioPage: React.FC<PageProps> = ({
         </Row>
         <Row className="portfolio__gallery">
           {edges.map((item: any, index: number) => (
-            <PortfolioItem item={item} key={index} />
+            <ProjectItem item={item} key={index} />
           ))}
         </Row>
       </Container>
@@ -99,31 +95,4 @@ const PortfolioPage: React.FC<PageProps> = ({
   );
 };
 
-export default PortfolioPage;
-
-export const Head: HeadFC = () => <title>Lylian Thothe - Portfolio</title>;
-
-export const pageQuery = graphql`
-  query Portfolios {
-    allMarkdownRemark(filter: { frontmatter: { media_type: { eq: "soundcloud" } } }, sort: { frontmatter: { date: DESC } }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            slug
-            title
-            date
-            tags
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 720)
-              }
-            }
-            media_type
-            media_src
-          }
-        }
-      }
-    }
-  }
-`;
+export default ProjectListing;

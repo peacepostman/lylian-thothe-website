@@ -2,11 +2,12 @@ const path = require(`path`);
 
 exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`
-    query Portfolios {
+    query Projects {
       allMarkdownRemark {
         nodes {
           frontmatter {
             slug
+            category
           }
         }
       }
@@ -15,8 +16,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   data.allMarkdownRemark.nodes.forEach((node) => {
     actions.createPage({
-      path: '/portfolio/' + node.frontmatter.slug,
-      component: path.resolve('./src/components/portfolio/PortfolioDetails.tsx'),
+      path: '/projects/' + node.frontmatter.category + '/' + node.frontmatter.slug,
+      component: path.resolve('./src/components/projects/ProjectDetails.tsx'),
       context: { slug: node.frontmatter.slug },
     });
   });

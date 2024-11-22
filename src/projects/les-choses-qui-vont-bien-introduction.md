@@ -1,5 +1,6 @@
 ---
 slug: 'les-choses-qui-vont-bien-introduction'
+category: 'films'
 date: '2024-08-24'
 title: 'Les Choses qui vont bien Introduction musique'
 tags: ['pop', 'guitar', 'short film']

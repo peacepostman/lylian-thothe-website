@@ -1,5 +1,6 @@
 ---
 slug: 'les-choses-qui-vont-bien'
+category: 'films'
 date: '2024-08-29'
 title: 'Les Choses qui vont bien'
 tags: ['short film', 'romantic', 'piano']

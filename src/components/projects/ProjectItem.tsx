@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import Col from '../../components/UI/Col';
+import Col from '../UI/Col';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import { item as itemStyled, media, play, textWrapper, title, tag as tagStyle } from './PortfolioItem.style';
+import { item as itemStyled, media, play, textWrapper, title, tag as tagStyle } from './ProjectItem.style';
 
-const PortfolioItem = ({ item }: { item: any }) => {
+const ProjectItem = ({ item }: { item: any }) => {
   var image = getImage(item.node.frontmatter.image);
   return (
     <Col lg={4} md={6} sm={6} className={'mix ' + item.node.frontmatter.tags.map((t) => t.toLowerCase().replace(/ /g, '-')).join(' ')}>
@@ -16,7 +16,7 @@ const PortfolioItem = ({ item }: { item: any }) => {
           }}
           style={{ position: 'relative' }}
           itemProp="url"
-          to={'/portfolio/' + item.node.frontmatter.slug}
+          to={'/projects/' + item.node.frontmatter.category + '/' + item.node.frontmatter.slug}
           aria-label={item.node.frontmatter.title}
         >
           <div css={media}>
@@ -48,4 +48,4 @@ const PortfolioItem = ({ item }: { item: any }) => {
   );
 };
 
-export default PortfolioItem;
+export default ProjectItem;

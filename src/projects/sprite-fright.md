@@ -1,5 +1,6 @@
 ---
 slug: 'sprite-fright'
+category: 'films'
 date: '2024-08-20'
 title: 'Sprite Fright - Short Movie Original Music'
 tags: ['orchestral', 'horror', 'film', 'rock', 'animation']

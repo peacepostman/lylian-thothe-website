@@ -1,5 +1,6 @@
 ---
 slug: 'tears-in-rain'
+category: 'films'
 date: '2024-08-29'
 title: 'Tears in rain'
 tags: ['science-fiction', 'epic', 'hybrid', 'action']

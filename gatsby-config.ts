@@ -1,5 +1,6 @@
 import { link } from 'fs';
 import type { GatsbyConfig } from 'gatsby';
+import path from 'path';
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -46,6 +47,15 @@ const config: GatsbyConfig = {
     DEV_SSR: true,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@components': path.resolve(__dirname, 'src/components'),
+        },
+        extensions: [],
+      },
+    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
@@ -70,18 +80,10 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'pages',
-        path: './src/pages/',
+        name: 'projects',
+        path: './src/projects/',
       },
-      __key: 'pages',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'portfolios',
-        path: './src/portfolios/',
-      },
-      __key: 'portfolios',
+      __key: 'projects',
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
