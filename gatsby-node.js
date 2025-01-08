@@ -21,4 +21,36 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: node.frontmatter.slug },
     });
   });
+
+  const { createRedirect } = actions;
+
+  createRedirect({
+    fromPath: `/musics/`,
+    toPath: `/projects/films/`,
+  });
+
+  createRedirect({
+    fromPath: `/musics`,
+    toPath: `/projects/films/`,
+  });
+
+  // createRedirect({
+  //   fromPath: `/projects`,
+  //   toPath: `/projects/films/`,
+  // });
+
+  // createRedirect({
+  //   fromPath: `/projects/`,
+  //   toPath: `/projects/films/`,
+  // });
+
+  // createRedirect({
+  //   fromPath: `/musics`,
+  //   toPath: `/musics/action/`,
+  // });
+
+  // createRedirect({
+  //   fromPath: `/musics/`,
+  //   toPath: `/musics/action/`,
+  // });
 };
