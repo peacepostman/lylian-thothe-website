@@ -70,6 +70,31 @@ const ContactPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero small title="LYLIAN THOTHE - Music Visual Composer" description="Contact me if you would like to start working together !" />
+      <Container>
+        <Row>
+          <Col sm={12}>
+            <p
+              css={css`
+                color: #fff;
+                font-size: 16px;
+              `}
+            >
+              You can contact me by phone at:
+              <a
+                css={css`
+                  color: #fff;
+                  font-size: 16px;
+                  margin-left: 4px;
+                  text-decoration: underline;
+                `}
+                href="tel:+3375824908"
+              >
+                +337.5.82.49.08
+              </a>
+            </p>
+          </Col>
+        </Row>
+      </Container>
       <section css={contact} className="contact">
         <Script id="form_listener">
           {`
