@@ -28,11 +28,11 @@ const headerNavOptions = css`
   }
 `;
 
-const headerDropdown = css`
+const headerDropdown = (wider?: boolean) => css`
   position: absolute;
   right: 0;
   top: 60px;
-  width: 140px;
+  width: ${wider ? '200px' : '140px'};
   background: #ffffff;
   text-align: right;
   padding: 2px 0;

@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Hero from '@components/hero';
 import WhoAmI from '@components/whoami';
 import HomePortfolio from '@components/home-portfolio';
+import './layout.css';
 
 const IndexPage = ({
   data: {
@@ -32,6 +33,7 @@ export const pageQuery = graphql`
           frontmatter {
             slug
             title
+            category
             date
             tags
             image {

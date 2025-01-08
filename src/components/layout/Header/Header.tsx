@@ -41,24 +41,47 @@ const Header: React.FC<{}> = () => {
               <nav css={headerNavMenu}>
                 <ul>
                   <li>
-                    <Link to="/projects">Projects</Link>
-                    <ul css={headerDropdown} className="dropdown">
+                    <Link to="/projects/films">Projects</Link>
+                    <ul css={headerDropdown(false)} className="dropdown">
                       <li>
                         <Link to="/projects/films">Films</Link>
                       </li>
                       <li>
+                        <Link to="/projects/trailers">Trailers</Link>
+                      </li>
+                      {/* <li>
                         <Link to="/projects/video-games">Video Games</Link>
                       </li>
                       <li>
                         <Link to="/projects/sound-fx">Sound FX</Link>
-                      </li>
-                      <li>
-                        <Link to="/projects/ads">Ads</Link>
-                      </li>
+                      </li> */}
                     </ul>
                   </li>
                   <li>
-                    <Link to="/musics">Musics</Link>
+                    <Link to="/musics/action">Musics</Link>
+                    <ul css={headerDropdown(true)} className="dropdown">
+                      <li>
+                        <Link to="/musics/action">Action</Link>
+                      </li>
+                      <li>
+                        <Link to="/musics/chamber-orchestra">Chamber Orchestra</Link>
+                      </li>
+                      <li>
+                        <Link to="/musics/ethnic">Ethnic</Link>
+                      </li>
+                      <li>
+                        <Link to="/musics/hybrid-orchestral-epic">Hybrid Orchestral Epic</Link>
+                      </li>
+                      <li>
+                        <Link to="/musics/intimate">Intimate</Link>
+                      </li>
+                      <li>
+                        <Link to="/musics/electro-ambient">Electro Ambient</Link>
+                      </li>
+                      <li>
+                        <Link to="/musics/orchestral-symphonic">Orchestral Symphonic</Link>
+                      </li>
+                    </ul>
                   </li>
                   <li>
                     <Link to="/contact">Contact</Link>

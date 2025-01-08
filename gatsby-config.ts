@@ -80,6 +80,14 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'musics',
+        path: './src/musics/',
+      },
+      __key: 'musics',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'projects',
         path: './src/projects/',
       },

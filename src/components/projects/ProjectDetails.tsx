@@ -27,7 +27,7 @@ const ProjecModal = ({
                 </svg>
               </Link>
             ) : null}
-            <div css={workModal}>
+            <div css={workModal(modal)}>
               <h2>{frontmatter.title}</h2>
               {frontmatter.media_type === 'mux' ? (
                 <MuxPlayer theme="microvideo" playbackId={frontmatter.media_src} accentColor="#FF0000" autoPlay />

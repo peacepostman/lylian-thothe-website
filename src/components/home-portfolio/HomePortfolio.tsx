@@ -27,7 +27,7 @@ const HomeGallery = ({ portfolio }: any) => {
                 modal: true,
               }}
               itemProp="url"
-              to={'/portfolio/' + item.node.frontmatter.slug}
+              to={'/projects/' + item.node.frontmatter.category + '/' + item.node.frontmatter.slug}
               aria-label={item.node.frontmatter.title}
               style={{ position: 'relative' }}
             >

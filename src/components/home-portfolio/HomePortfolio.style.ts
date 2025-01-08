@@ -113,7 +113,12 @@ const workPlay = css`
   }
 `;
 
-const workModal = css`
+const workModal = (modal: boolean) => css`
+  ${!modal &&
+  `margin-top: 96px;
+  position: relative;
+  aspect-ratio: 16 / 9;`}
+
   iframe,
   mux-player {
     width: 100%;

@@ -1,6 +1,6 @@
 ---
 slug: 'civil-war-trailer'
-category: 'films'
+category: 'trailers'
 date: '2024-08-28'
 title: 'Civil War Trailer Original Epic Music'
 tags: ['trailer', 'epic', 'hybrid', 'action']

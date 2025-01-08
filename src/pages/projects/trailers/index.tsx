@@ -2,7 +2,7 @@ import * as React from 'react';
 import { graphql, type HeadFC, type PageProps } from 'gatsby';
 import ProjectListing from '@components/projects/ProjectListing';
 
-const ProjectsAds: React.FC<PageProps> = ({
+const ProjectsTrailers: React.FC<PageProps> = ({
   data: {
     allMarkdownRemark: { edges },
   },
@@ -10,18 +10,18 @@ const ProjectsAds: React.FC<PageProps> = ({
   return <ProjectListing edges={edges} />;
 };
 
-export default ProjectsAds;
+export default ProjectsTrailers;
 
 export const Head: HeadFC = () => (
   <>
-    <title>Lylian Thothe - Projects - Ads</title>
-    <meta name="description" content="Find here all my musics creations for the video games world" />
+    <title>Lylian Thothe - Projects - Trailers</title>
+    <meta name="description" content="Find here all my musics creations for the trailers" />
   </>
 );
 
 export const pageQuery = graphql`
   query ProjectsFilm {
-    allMarkdownRemark(filter: { frontmatter: { category: { eq: "ads" } } }, sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(filter: { frontmatter: { category: { eq: "trailers" } } }, sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           id
