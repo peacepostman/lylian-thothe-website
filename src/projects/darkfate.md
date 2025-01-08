@@ -1,5 +1,5 @@
 ---
-slug: 'dakfate'
+slug: 'darkfate'
 category: 'films'
 date: '2025-01-08'
 title: 'Darkfate'
