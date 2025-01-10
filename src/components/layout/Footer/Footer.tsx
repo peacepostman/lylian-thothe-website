@@ -39,7 +39,7 @@ const Footer: React.FC<{}> = () => {
               <div css={social}>
                 {data.site.siteMetadata.socials.map(({ link, name, icon }: { name: string; link: string; icon: string }) => (
                   <a href={link} target="_blank" key={name} title={name}>
-                    <img src={`/static/${icon}`} alt={name} />
+                    <img src={icon} alt={name} />
                   </a>
                 ))}
               </div>

@@ -5,14 +5,10 @@ import '@mux/mux-player/themes/microvideo';
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-v5.0';
 import { workModal, workModalClose } from '../home-portfolio/HomePortfolio.style';
 
-const ProjecModal = ({
-  data, // this prop will be injected by the GraphQL query below.
-}: {
-  data: any;
-}) => {
+const ProjectModal = ({ data }: { data: any }) => {
   const {
     markdownRemark: { frontmatter, html },
-  } = data; // data.markdownRemark holds your post data
+  } = data;
 
   return (
     <>
@@ -56,23 +52,19 @@ const ProjecModal = ({
   );
 };
 
-export const Head: HeadFC = ({
-  data, // this prop will be injected by the GraphQL query below.
-}: {
-  data: any;
-}) => {
+export const Head: HeadFC = ({ data }: { data: any }) => {
   const {
     markdownRemark: {
       frontmatter: { title },
     },
-  } = data; // data.markdownRemark holds your post data
+  } = data;
 
   return <title>Lylian Thothe - Projects - {title}</title>;
 };
 
 export const pageQuery = graphql`
   query ProjectDetails($slug: String) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    markdownRemark(frontmatter: { folder: { eq: "projects" }, slug: { eq: $slug } }) {
       html
       frontmatter {
         slug
@@ -90,4 +82,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default ProjecModal;
+export default ProjectModal;

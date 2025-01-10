@@ -81,7 +81,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'musics',
-        path: './src/musics/',
+        path: './src/data/musics/',
       },
       __key: 'musics',
     },
@@ -89,7 +89,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'projects',
-        path: './src/projects/',
+        path: './src/data/projects/',
       },
       __key: 'projects',
     },

@@ -21,7 +21,10 @@ export const Head: HeadFC = () => (
 
 export const pageQuery = graphql`
   query ProjectsVideoGames {
-    allMarkdownRemark(filter: { frontmatter: { category: { eq: "video-games" } } }, sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { folder: { eq: "projects" }, category: { eq: "video-games" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       edges {
         node {
           id

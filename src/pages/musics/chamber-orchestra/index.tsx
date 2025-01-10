@@ -25,7 +25,7 @@ export const Head: HeadFC = () => (
 export const pageQuery = graphql`
   query MusicAction {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "chamber-orchestra" }, media_type: { eq: "soundcloud" } } }
+      filter: { frontmatter: { folder: { eq: "musics" }, category: { eq: "chamber-orchestra" }, media_type: { eq: "soundcloud" } } }
       sort: { frontmatter: { date: DESC } }
     ) {
       edges {

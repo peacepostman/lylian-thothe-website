@@ -1,10 +1,11 @@
 ---
 slug: 'spiderman-opening-scene-rescored'
+folder: 'projects'
 category: 'films'
 date: '2024-08-23'
 title: 'Spiderman Opening Scene Rescored'
 tags: ['video game', 'orchestral', 'remix', 'hip hop']
-image: './../images/portfolio/smm.jpg'
+image: './../../images/portfolio/smm.jpg'
 media_type: 'youtube'
 media_src: 'AeI2shcAuQY'
 ---

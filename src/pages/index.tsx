@@ -26,7 +26,11 @@ export const Head: HeadFC = () => <title>Lylian Thothe - </title>;
 
 export const pageQuery = graphql`
   query PortfolioExtract {
-    allMarkdownRemark(filter: { frontmatter: { media_type: { eq: "youtube" } } }, sort: { frontmatter: { date: DESC } }, limit: 6) {
+    allMarkdownRemark(
+      filter: { frontmatter: { folder: { eq: "projects" }, media_type: { eq: "youtube" } } }
+      sort: { frontmatter: { date: DESC } }
+      limit: 6
+    ) {
       edges {
         node {
           id

@@ -1,10 +1,11 @@
 ---
 slug: 'first-bloom-spring-animation'
+folder: 'projects'
 category: 'films'
 date: '2024-08-27'
 title: 'Spring Movie Scene Original Music'
 tags: ['Short film', 'animation', 'orchestral', 'epic']
-image: './../images/portfolio/fbl.jpg'
+image: './../../images/portfolio/fbl.jpg'
 media_type: 'youtube'
 media_src: 'nVMMh_ywwsk'
 ---

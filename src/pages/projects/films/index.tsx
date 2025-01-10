@@ -24,7 +24,7 @@ export const Head: HeadFC = () => (
 
 export const pageQuery = graphql`
   query ProjectsFilms {
-    allMarkdownRemark(filter: { frontmatter: { category: { eq: "films" } } }, sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(filter: { frontmatter: { folder: { eq: "projects" }, category: { eq: "films" } } }, sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           id

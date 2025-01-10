@@ -8,7 +8,7 @@ import { item as itemStyled, media, play, textWrapper, title, tag as tagStyle } 
 const ProjectItem = ({ item }: { item: any }) => {
   var image = getImage(item.node.frontmatter.image);
   return (
-    <Col lg={4} md={6} sm={6} className={'mix ' + item.node.frontmatter.tags.map((t) => t.toLowerCase().replace(/ /g, '-')).join(' ')}>
+    <Col lg={4} md={6} sm={6} className={'mix ' + item.node.frontmatter.tags.map((t: string) => t.toLowerCase().replace(/ /g, '-')).join(' ')}>
       <div css={itemStyled} itemProp="track" itemScope itemType="https://schema.org/MusicRecording">
         <Link
           state={{
