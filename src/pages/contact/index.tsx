@@ -87,9 +87,9 @@ const ContactPage: React.FC<PageProps> = () => {
                   margin-left: 4px;
                   text-decoration: underline;
                 `}
-                href="tel:+3375824908"
+                href="tel:+33767469296"
               >
-                +337.5.82.49.08
+                +33.7.67.46.92.96
               </a>
             </p>
           </Col>

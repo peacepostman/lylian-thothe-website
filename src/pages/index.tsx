@@ -13,7 +13,7 @@ const IndexPage = ({
 }: any) => {
   return (
     <>
-      <Hero link="/musics" title="LYLIAN THOTHE - Music Visual Composer" description="I compose the best music for your project" small />
+      <Hero link="/musics/action" title="LYLIAN THOTHE - Music Visual Composer" description="I compose the best music for your project" small />
       <HomePortfolio portfolio={edges} />
       <WhoAmI />
     </>
